@@ -1,0 +1,108 @@
+.app {
+    height: 100%;
+    width: 100%;
+}
+
+$toolbar-height: 40px;
+$toolbar-pad: 15px;
+
+.toolbar {
+    width: 100%;
+    height: $toolbar-height;
+    padding: 0 $toolbar-pad / 4;
+    color: $grey-light;
+    border-bottom: 1px solid $grey-light;
+
+    .icon {
+        padding: 0 $toolbar-pad / 2;
+        font-family: $font-icon;
+        font-size: $toolbar-height;
+        cursor: pointer;
+
+        &:hover {
+            color: $green;
+        }
+    }
+}
+
+$view-vpad: 12px;
+$view-hpad: 12px;
+
+.main, .aside-alpha, .aside-beta {
+    display: none;
+    position: absolute;
+    top: $toolbar-height;
+    bottom: 0;
+
+    & > .view {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        .item {
+            width: 100%;
+            padding: 0 $view-hpad;
+
+            &.pt {
+                padding-top: $view-vpad;
+            }
+
+            &.pb {
+                padding-bottom: $view-vpad;
+            }
+
+            &.pb-half {
+                padding-bottom: $view-vpad / 2;
+            }
+        }
+
+        .item-abs {
+            position: absolute;
+            left: $view-hpad;
+            right: $view-hpad;
+        }
+
+        header {
+            color: $grey-medium;
+
+            h1 {
+                font-size: $size-big;
+                letter-spacing: -0.04rem;
+            }
+
+            h2 {
+                margin-top: 2px;
+            }
+        }
+    }
+}
+
+.main {
+    left: 0;
+    right: 0;
+}
+
+.aside-alpha > .view, .aside-beta > .view {
+    color: $grey-dark;
+    background: $grey-lighter;
+}
+
+
+.aside-alpha {
+    left: 0;
+    width: 320px;
+}
+
+.aside-beta {
+    right: 0;
+    width: 280px;
+}
+
+
+.aside-alpha > .view {
+    border-right: 1px solid $grey-light;
+}
+
+.aside-beta > .view {
+    border-left: 1px solid $grey-light;
+}

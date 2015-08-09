@@ -1,0 +1,43 @@
+.thread-list {
+    width: 100%;
+
+    .col {
+        padding: 0 2px;
+    }
+
+    ul {
+        list-style: none;
+        top: $size-big + 1.5 * $line-base + 1px;
+    }
+
+    li {
+        width: 100%;
+        height: auto;
+        padding: $line-base 0;
+        height: 4 * $line-base + 4px;
+        border-top: 1px solid $grey-light;
+        cursor: pointer;
+
+        &.updated .title {
+            color: $green;
+        }
+
+        &:hover {
+            background: $grey-lighter;
+        }
+    }
+
+    .users {
+        margin-top: 4px;
+        font-size: 12px;
+        color: $grey-medium-dark;
+    }
+
+    .author {
+        color: $grey-medium-light;
+    }
+
+    .body {
+        color: $grey-medium-dark;
+    }
+}

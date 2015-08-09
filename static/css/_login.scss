@@ -1,0 +1,57 @@
+$login-width: 400px;
+$login-input-width: 100%;
+
+.login {
+    height: 100%;
+    color: $grey-dark;
+
+    .logo {
+        width: 15%;
+        position: relative;
+        top: -7px;
+        left: -6px;
+    }
+
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: $login-width;
+        margin: -100px 0 0 (-$login-width)/2;
+    }
+
+    header {
+        margin-bottom: 40px;
+
+        h1 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 14px;
+        }
+    }
+
+    input[type="text"], input[type="password"] {
+        width: $login-input-width;
+        margin-bottom: 1.5rem;
+    }
+
+    .info {
+        color: $warning;
+    }
+
+    .submit, .toggle {
+        margin-top: 0.5rem;
+    }
+
+    .submit {
+        width: 4/10 * $login-input-width;
+        margin-right: calc(1/10 * #{$login-input-width} - 4px);
+    }
+
+    .toggle {
+        width: 5/10 * $login-input-width;
+    }
+}

@@ -1,0 +1,16 @@
+.grid {
+    .col {
+        float: left;
+        height: 100%;
+        position: relative;
+    }
+
+    $ns: 2 3;
+    @each $n in $ns {
+        @for $i from 1 through $n {
+            .col-#{$i}-#{$n} {
+                width: percentage($i / $n);
+            }
+        }
+    }
+}

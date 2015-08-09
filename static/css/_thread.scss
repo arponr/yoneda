@@ -1,0 +1,11 @@
+.thread {
+    height: 100%;
+    position: relative;
+
+    .messages {
+        top: 16px + 5px + 4 * $line-base;
+        bottom: 160px + 1.5 * $line-base;
+        height: auto;
+        overflow: auto;
+    }
+}

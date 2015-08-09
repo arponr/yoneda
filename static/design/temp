@@ -1,0 +1,163 @@
+<div class="thread">
+          <header>
+            <h1>Pulp Fiction</h1>
+            <h2>Jules Winnfield, Jimmie Tarantino</h2>
+          </header>
+          <div class="messages nano">
+            <div class="nano-content">
+              <div class="message">
+                <div class="author">Jules Winnfield</div>
+                <div class="body">
+                  Mmm. Goddamn, Jimmie. This is some serious gourmet
+                  shit. Usually, me and Vince would be happy with some
+                  freeze-dried Taster's Choice, right? And he springs
+                  this serious gourmet shit on us. What flavor is this?
+                </div>
+              </div>
+              <div class="message">
+                <div class="author">Jimmie Tarantino</div>
+                <div class="body">
+                  Knock it off, Julie.
+                </div>
+              </div>
+              <div class="message">
+                <div class="author">Jules Winnfield</div>
+                <div class="body">
+                  What?
+                </div>
+              </div>
+              <div class="message">
+                <div class="author">Jimmie Tarantino</div>
+                <div class="body">
+                  I don't need you to tell me how fucking good my coffee
+                  is, okay? I'm the one who buys it, I know how good it
+                  is. When Bonnie goes shopping, she buys shit. Me, I
+                  buy the gourmet expensive stuff because when I drink
+                  it, I want to taste it. But you know what's on my mind
+                  right now? It ain't the coffee in my kitchen, it's the
+                  dead nigger in my garage.
+                </div>
+              </div>
+              <div class="message">
+                <div class="author">Jules Winnfield</div>
+                <div class="body">
+                  Oh, Jimmie, don't even worry about that.
+                </div>
+              </div>
+              <div class="message">
+                <div class="author">Jimmie Tarantino</div>
+                <div class="body">
+                  No, I wanna ask you a question. When you came pullin'
+                  in here, did you notice a sign out in front of my
+                  house that said "Dead Nigger Storage"?
+                </div>
+              </div>
+              <div class="message">
+                <div class="author">Jules Winnfield</div>
+                <div class="body">
+                  Jimmie, you know I ain't seen no...
+                </div>
+              </div>
+              <div class="message">
+                <div class="author">Jimmie Tarantino</div>
+                <div class="body">
+                  Did you notice a sign out in front of my house that
+                  said "Dead Nigger Storage"?
+                </div>
+              </div>
+              <div class="message">
+                <div class="author">Jules Winnfield</div>
+                <div class="body">
+                  No, I didn't.
+                </div>
+              </div>
+              <div class="message">
+                <div class="author">Jimmie Tarantino</div>
+                <div class="body">
+                  You know why you didn't see that sign?
+                </div>
+              </div>
+              <div class="message">
+                <div class="author">Jules Winnfield</div>
+                <div class="body">
+                  Why?
+                </div>
+              </div>
+              <div class="message">
+                <div class="author">Jimmie Tarantino</div>
+                <div class="body">
+                  'Cause it ain't there, 'cause storing dead niggers
+                  ain't my fucking business, that's why.
+                </div>
+              </div>
+              <div class="message">
+                <div class="author">Jules Winnfield</div>
+                <div class="body">
+                  But Jimmie, we ain't gonna store the motherfucker.
+                </div>
+              </div>
+              <div class="message">
+                <div class="author">Jimmie Tarantino</div>
+                <div class="body">
+                  No, no, no, no, no, don't you fucking realize, man,
+                  that if Bonnie comes home and finds a dead body in her
+                  house, I'm gonna get divorced? All right? No marriage
+                  counseling, no trial separation, I'm going to get
+                  fucking divorced, okay? And I don't want to get
+                  fucking divorced. Now man, you know, fuck, I wanna
+                  help you, but I don't want to lose my wife doing it,
+                  all right?
+                </div>
+              </div>
+              <div class="message">
+                <div class="author">Jules Winnfield</div>
+                <div class="body">
+                  Jimmie, Jimmie, she ain't gonna leave you.
+                </div>
+              </div>
+              <div class="message">
+                <div class="author">Jimmie Tarantino</div>
+                <div class="body">
+                  Don't fucking "Jimmie" me, Jules, okay? Don't fucking
+                  "Jimmie" me. There's nothing that you're gonna say
+                  that's gonna make me forget that I love my wife, is
+                  there? Now look, you know, she comes home from work in
+                  about an hour and a half. Graveyard shift at the
+                  hospital. You gotta make some phone calls? You gotta
+                  call some people? Well, then do it. And then get the
+                  fuck out of my house before she gets here.
+                </div>
+              </div>
+              <div class="message">
+                <div class="author">Jules Winnfield</div>
+                <div class="body">
+                  Hey, that's Kool and the Gang. You know, we don't
+                  wanna fuck your shit up. All we wanna do is call my
+                  people and get them to bring us in, that's all.
+                </div>
+              </div>
+              <div class="message">
+                <div class="author">Jimmie Tarantino</div>
+                <div class="body">
+                  You don't wanna fuck my shit up? You're fucking up my
+                  shit right now. You're gonna fuck my shit up big time
+                  if Bonnie comes home. So just do me that favor, all
+                  right? The phone is in my bedroom, I suggest you get
+                  going.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="message-input">
+            <div class="live item-abs"></div>
+            <div class="area item-abs">
+              <textarea placeholder="Write a message"></textarea>
+            </div>
+            <div class="options item-abs">
+              <input class="send input fl" type="button" value="send">
+              <input class="preview input fl" type="button" value="preview">
+              <input class="md input active fr" type="button" value="Markdown">
+              <input class="tex input active fr" type="button" value="TeX">
+            </div>
+          </div>
+        </div>

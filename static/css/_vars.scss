@@ -1,0 +1,59 @@
+$font-serif: "Times", "Times New Roman", serif;
+$font-sans: "jaf-bernino-sans", "Helvetica Neue", "Arial", sans-serif;
+$font-mono: "source-code-pro", monospace;
+$font-icon: "entypo";
+
+$size-base: 13px;
+$line-base-unitless: 1;
+$line-base: $size-base * $line-base-unitless;
+
+$size-big: 16px;
+$size-small: 12px;
+$size-tiny: 11px;
+
+$background: #ffffff;
+$warning: #bb0000;
+
+$grey-darker: #3b3d3c;
+$grey-dark: #4b4d4c;
+$grey-medium-dark: #8b8d8c;
+$grey-medium: #abadac;
+$grey-medium-light: #cbcdcc;
+$grey-light: #ebedec;
+$grey-lighter: #fbfdfc;
+$white: #ffffff;
+$green: #35a075;
+
+@mixin placeholder($c) {
+    ::-webkit-input-placeholder {
+        color: $c;
+    }
+    ::-moz-placeholder {
+        color: $c;
+    }
+    :-ms-input-placeholder {
+        color: $c;
+    }
+}
+
+@mixin inset-shadow($w, $c) {
+    -moz-box-shadow:    inset 0 0 $w $c;
+    -webkit-box-shadow: inset 0 0 $w $c;
+    box-shadow:         inset 0 0 $w $c;
+}
+
+@mixin border-radius($r) {
+     -webkit-border-radius: $r;
+     -moz-border-radius: $r;
+     border-radius: $r;
+}
+
+@mixin rounded($c) {
+    border: 1px solid $c;
+    @include border-radius(0.3rem);
+}
+
+@mixin rounded-fill($cb, $cf) {
+    background: $cf;
+    @include rounded($cb);
+}

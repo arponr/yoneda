@@ -1,0 +1,49 @@
+$message-options-height: 30px;
+
+.message-input {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .area, .options {
+        position: absolute;
+        left: 0;
+        right: 0;
+        border-top: 1px solid $grey-light;
+    }
+
+    .area {
+        top: 0;
+        bottom: 2.5 * $line-base;
+        padding: $line-base 0;
+        font-family: $font-mono;
+        font-size: 12px;
+        line-height: 1.3;
+
+        textarea {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .options {
+        bottom: 0;
+        padding-top: $line-base/2;
+
+        .input {
+            padding: $line-base/2 $line-base;
+            color: $grey-medium;
+            @include border-radius(10px);
+
+            &:hover {
+                background: $grey-light;
+                color: $grey-dark;
+            }
+
+            &.active {
+                color: $green;
+            }
+        }
+    }
+}

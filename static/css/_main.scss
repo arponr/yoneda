@@ -1,0 +1,33 @@
+$main-header-h1-size: $size-big;
+$main-header-h2-size: $size-base;
+$main-header-h2-pad: 5px;
+$main-header-pad: 2 * $line-base;
+
+.main {
+    header {
+        padding-bottom: $main-header-pad;
+
+        h1 {
+            color: $grey-medium-dark;
+            font-size: $main-header-h1-size;
+        }
+
+        h2 {
+            margin-top: $main-header-h2-pad;
+            color: $grey-medium;
+            font-size: $main-header-h2-size;
+        }
+    }
+
+    .sec {
+        position: absolute;
+        left: 60px;
+        right: 0;
+    }
+}
+
+@import "message";
+@import "input";
+@import "thread-list";
+@import "thread";
+@import "new-thread";

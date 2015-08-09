@@ -1,0 +1,28 @@
+html {
+    font-family: $font-sans;
+    font-size: $size-base;
+    line-height: $line-base-unitless;
+    color: $grey-dark;
+    background: $background;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+input[type="button"] {
+    cursor: pointer;
+}

@@ -1,0 +1,39 @@
+$new-thread-header-height: $main-header-h1-size + $main-header-pad;
+$new-thread-input-pad: 10px;
+$new-thread-input-height: 2 * $new-thread-input-pad + $line-base + 4px + 1px;
+
+.new-thread {
+    .form {
+        top: $new-thread-header-height;
+
+        .input {
+            width: 100%;
+            border-top: 1px solid $grey-light;
+            padding: $new-thread-input-pad 0;
+        }
+    }
+
+    .message-input {
+        top: $new-thread-header-height + 2 * $new-thread-input-height;
+        bottom: 0;
+
+        .area, .live {
+            top: 0;
+        }
+
+        .live {
+            bottom: calc(50% + #{$message-options-height} / 2 + #{$line-base} / 2);
+            font-family: $font-serif;
+            font-size: 14px;
+        }
+
+        .area {
+            bottom: $message-options-height;
+            transition: top 0.15s;
+
+            &.half {
+                top: calc(50% - #{$message-options-height} / 2 + #{$line-base} / 2);
+            }
+        }
+    }
+}

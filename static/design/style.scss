@@ -1,0 +1,449 @@
+$font-serif: "Times", "Times New Roman", serif;
+$font-sans: "jaf-bernino-sans", "Helvetica Neue",  "Arial", sans-serif;
+$font-mono: "source-code-pro", monospace;
+$font-icon: "entypo";
+
+$size-base: 13px;
+$line-base-unitless: 1;
+$line-base: $size-base * $line-base-unitless;
+
+$size-big: 17px;
+
+$background: #ffffff;
+$warning: #bb0000;
+
+$grey-darker: #3b3d3c;
+$grey-dark: #4b4d4c;
+$grey-medium-dark: #8b8d8c;
+$grey-medium: #abadac;
+$grey-medium-light: #cbcdcc;
+$grey-light: #ebedec;
+$grey-lighter: #fbfdfc;
+$white: #ffffff;
+$green: #35a075;
+
+/** initial setup **/
+.nano {
+  position : relative;
+  width    : 100%;
+  height   : 100%;
+  overflow : hidden;
+}
+.nano > .nano-content {
+  position      : absolute;
+  overflow-y      : scroll;
+  overflow-x    : hidden;
+  top           : 0;
+  right         : 15px;
+  bottom        : 0;
+  left          : 0;
+}
+.nano > .nano-content:focus {
+  outline: thin dotted;
+}
+.nano > .nano-content::-webkit-scrollbar {
+  visibility: hidden;
+}
+.has-scrollbar > .nano-content::-webkit-scrollbar {
+  visibility: visible;
+}
+.nano > .nano-pane {
+  background : $grey-light;
+  position   : absolute;
+  width      : 5px;
+  right      : 0;
+  top        : 0;
+  bottom     : 0;
+  visibility : hidden\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : .01;
+  -webkit-transition    : .2s;
+  -moz-transition       : .2s;
+  -o-transition         : .2s;
+  transition            : .2s;
+  -moz-border-radius    : 5px;
+  -webkit-border-radius : 5px;
+  border-radius         : 5px;
+}
+.nano > .nano-pane > .nano-slider {
+  background: #444;
+  background: $grey-medium;
+  position              : relative;
+  margin                : 0;
+  -moz-border-radius    : 3px;
+  -webkit-border-radius : 3px;
+  border-radius         : 3px;
+}
+.nano:hover > .nano-pane, .nano-pane.active, .nano-pane.flashed {
+  visibility : visible\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : 0.99;
+}
+
+@mixin placeholder($c) {
+    ::-webkit-input-placeholder {
+        color: $c;
+    }
+    ::-moz-placeholder {
+        color: $c;
+    }
+    :-ms-input-placeholder {
+        color: $c;
+    }
+}
+
+@mixin inset-shadow($w, $c) {
+    -moz-box-shadow:    inset 0 0 $w $c;
+    -webkit-box-shadow: inset 0 0 $w $c;
+    box-shadow:         inset 0 0 $w $c;
+}
+
+@mixin border-radius($r) {
+     -webkit-border-radius: $r;
+     -moz-border-radius: $r;
+     border-radius: $r;
+}
+
+@mixin rounded($c) {
+    border: 1px solid $c;
+    @include border-radius(0.3rem);
+}
+
+@mixin rounded-fill($cb, $cf) {
+    background: $cf;
+    @include rounded($cb);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+input, textarea {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+}
+
+textarea {
+    resize: none;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/* $input-pad: 6px; */
+/* $input-height: 2 * $input-pad + $line-base + 4px; */
+
+/* .input { */
+/*     padding: $input-pad; */
+/*     @include rounded-fill($grey-light, $white); */
+/*     @include placeholder($grey-medium); */
+/* } */
+
+input[type="button"] {
+    cursor: pointer;
+}
+
+.grid {
+    .col {
+        float: left;
+        height: 100%;
+        position: relative;
+    }
+
+    $ns: 2 3;
+    @each $n in $ns {
+        @for $i from 1 through $n {
+            .col-#{$i}-#{$n} {
+                width: percentage($i / $n);
+            }
+        }
+    }
+}
+
+html {
+    font-family: $font-sans;
+    font-size: $size-base;
+    line-height: $line-base-unitless;
+    color: $grey-dark;
+    background: $background;
+}
+
+.wrap {
+    width: 840px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 40px 40px 20px 40px;
+}
+
+$nav-li-pad: 4px;
+
+.nav {
+    .group {
+        position: absolute;
+        left: 0;
+        right: 20px;
+    }
+
+    ul {
+        list-style: none;
+        color: $grey-medium-dark;
+
+        & > li {
+            cursor: pointer;
+            padding: $nav-li-pad 0;
+            width: 100%;
+
+            &.active, &:hover {
+                color: $grey-dark;
+            }
+        }
+
+        .label {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .bubble {
+            margin-left: 2px;
+            float: right;
+            padding: 1px 4px 1px;
+            min-width: 14px;
+            text-align: center;
+            background: $green;
+            color: $white;
+            font-weight: 600;
+            @include border-radius(7px);
+            font-size: 11px;
+        }
+    }
+}
+
+$group-pad: 25px;
+$logo-size: 55px;
+$panes-height: 5 * ($line-base + 2 * $nav-li-pad);
+$threads-height: 5 * ($line-base + 2 * $nav-li-pad);
+
+.logo {
+    position: relative;
+    width: $logo-size + 5px;
+    top: -5px;
+    left: -5px;
+}
+
+.nav_title {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $grey-medium-light;
+}
+
+.nav_panes {
+    top: $logo-size + $group-pad;
+    height: $panes-height;
+}
+
+.nav_threads {
+    top: $logo-size + $panes-height + 2 * $group-pad;
+    height: $threads-height;
+}
+
+.nav_notifs {
+    top: $logo-size + $panes-height + $threads-height + 3 * $group-pad;
+    bottom: 0;
+
+    .notif {
+        width: 100%;
+        margin: 2 * $nav-li-pad 0;
+        line-height: 1.3;
+        @include rounded-fill($grey-light, $grey-lighter);
+    }
+
+    .type, .info {
+        padding: 2px 5px;
+    }
+
+    .type {
+        font-size: 12px;
+    }
+
+    .info {
+        font-size: 11px;
+        max-height: 3 * 1.2 * $line-base + 5px;
+        overflow: hidden;
+        border-top: 1px solid $grey-light;
+    }
+}
+
+.main {
+    padding-left: 60px;
+}
+
+.main {
+    header {
+        padding-bottom: 1.5 * $line-base;
+        border-bottom: 1px solid $grey-light;
+
+        h1 {
+            color: $grey-medium-dark;
+            font-size: 16px;
+        }
+
+        h2 {
+            margin-top: 5px;
+            color: $grey-medium;
+        }
+    }
+}
+
+.thread-list {
+    width: 100%;
+
+    .col {
+        padding: 0 5px;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        width: 100%;
+        height: auto;
+        padding: $line-base 0;
+        height: 4 * $line-base + 4px;
+        border-bottom: 1px solid $grey-light;
+        cursor: pointer;
+
+        &.updated .title {
+            color: $green;
+        }
+
+        &:hover {
+            background: $grey-lighter;
+        }
+    }
+
+    .users {
+        margin-top: 4px;
+        font-size: 12px;
+        color: $grey-medium-dark !important;
+    }
+
+    .author {
+        color: $grey-medium-light !important;
+    }
+
+    .body {
+        color: $grey-medium-dark !important;
+    }
+}
+
+.thread {
+    height: 100%;
+    position: relative;
+}
+
+.messages {
+    position: absolute;
+    top: 16px + 5px + 4 * $line-base;
+    bottom: 160px + 1.5 * $line-base;
+    height: auto;
+    overflow: auto;
+}
+
+.message {
+    .author {
+        font-weight: 600;
+        color: $grey-medium-dark;
+        font-size: 11px;
+        text-transform: uppercase;
+    }
+
+    .body {
+        margin-top: 4px;
+        font-family: $font-serif;
+        font-size: 14px;
+        // line-height: 1.3;
+    }
+
+    & + .message {
+        margin-top: 1.5 * $line-base;
+    }
+}
+
+.message-input {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 160px;
+
+    .area, .options {
+        position: absolute;
+        left: 0;
+        right: 0;
+        border-top: 1px solid $grey-light;
+    }
+
+    .area {
+        top: 0;
+        bottom: 2.5 * $line-base;
+        padding: $line-base 0;
+        font-family: $font-mono;
+        font-size: 12px;
+        line-height: 1.3;
+
+        textarea {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .options {
+        bottom: 0;
+        padding-top: $line-base/2;
+
+        .input {
+            padding: $line-base/2 $line-base;
+            color: $grey-medium;
+            @include border-radius(10px);
+
+            &:hover {
+                background: $grey-light;
+                color: $grey-dark;
+            }
+
+            &.active {
+                color: $green;
+            }
+        }
+    }
+}
